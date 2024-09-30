@@ -226,3 +226,11 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+# Adding custom.css for centering text in the posts
+plugins:
+  - jekyll-include-cache
+
+# Add custom stylesheet
+include:
+  - assets/css/custom.css
