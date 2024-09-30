@@ -4,12 +4,12 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-Welcome to my blog! 
+Welcome!
 
-As per my background as a physicist, I would like have a deeper understanding on how things work which I always consider analogous to the process of peeling an onion into its layers: could be painful in the beginning but surely providing better outcomes (e.g rich flavors).
+I am physicist with a strong passion in understanding how things work at a deeper level. I see the path for improvement in this sense as a bit like first post in this blog: a random walk where you can explore different angles at each step in order to have a broader view of your surroundings.
 
-In an attempt to revise and further my knowledge on subjects that I am interested in, I decided to take a step in this direction and began writing blog posts about various topics related to Statistics, Finance and Machine Learning. As a researcher who learns the most effectively by explaining things to others with an optimal dosage of mathematics, numerical analysis and intuition, I always find this approach quite useful for progress and self development. 
+So, in an attempt to revise and further my knowledge, I decided to take a step in the directions that I find interesting and began writing about various topics related to Statistics, Finance and Machine Learning. As a researcher who learns the most effectively by explaining things to others with an optimal dosage of mathematics, numerical analysis and intuition, I always find this approach quite useful for progress and self development. 
 
-The posts I share in this blog are based on the notes I have taken in the past. I will try to upload more as a find time to clear up and write based on these notes.  
+The content I share in this blog are based on the some research and reading I have done in the last two years. I will try to upload more as a find time to clear up my notes and prepare them in a presentable manner.  
 
 Feel free to contact me via e-mail for questions and comments. 
