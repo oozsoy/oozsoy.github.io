@@ -2,6 +2,11 @@
   Post-specific style
 */
 
+// Force justification for post content
+p {
+  text-align: justify;
+}
+
 %btn-post-nav {
   width: 50%;
   position: relative;
