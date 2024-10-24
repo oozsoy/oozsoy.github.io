@@ -93,7 +93,7 @@ $$
 \end{equation}
 $$
 
-so that $n, \mathbb{E}[m], \mathbb{V}[m] \sim \mathcal{O}(n) \gg 1$ in the large $n$ limit. As should be clear from \eqref{bstat}, we also typically expect $m,  n-m \sim n/2$ and hence $\mathcal{O}(n) \gg 1$ as well. This should be intuive because without a priori, we expect to make $m \sim n/2$ up steps when $n$ is large. In this limit, we can approximate the probability distribution utilizing [stirling's formula/approximation](https://en.wikipedia.org/wiki/Stirling%27s_approximation) as 
+so that $n, \mathbb{E}[m], \mathbb{V}[m] \sim \mathcal{O}(n) \gg 1$ in the large $n$ limit. As should be clear from \eqref{bstat}, we also typically expect $m,  n-m \sim n/2$ and hence $\mathcal{O}(n) \gg 1$ as well. This should be intuitive because without a priori, we expect to make $m \sim n/2$ up steps when $n$ is large. In this limit, we can approximate the probability distribution utilizing [Stirling's formula/approximation](https://en.wikipedia.org/wiki/Stirling%27s_approximation) as 
 
 $$
 \begin{equation}\label{bd}
@@ -119,7 +119,7 @@ $$
 
 Notice that for the validity of the small $\epsilon$ expansions in \eqref{a1} and \eqref{a2}, we may expect $\epsilon$ to be at most $\mathcal{O}(\sqrt{n})$ so that corrections are negligible, $\propto \mathcal{O}(1/\sqrt{n})$, for large $n$. This implies that the formulas we provide here are valid for $m$ that is an order one factor of standard deviation $\sigma = \sqrt{npq}$ away from the mean $\mu = np$. 
 
-Finally, exponentiating \eqref{a1} and using it in \eqref{bd} together with \eqref{a2}, the large $n$ limit of \eqref{bde} read as  
+Finally, using exponentiation of \eqref{a1} and using it in \eqref{bd} together with \eqref{a2}, the large $n$ limit of \eqref{bde} read as  
 
 $$
 \begin{equation}
@@ -135,7 +135,7 @@ p(R) \simeq \frac{2}{\sqrt{2\pi \mathbb{V}[R]}} \mathrm{e}^{-(R - \mathbb{E}[R])
 \end{equation}
 $$
 
-Therefore the total displacement $R$ from the origin has a normal distribution with mean $\mathbb{E}[R] = 0$ and variance $\mathbb{V}[R] = n$ as expected from a random walk process in $d = 1$ with a unit average step length $b^2 = 1$ as described by eq. \eqref{bsq}. The probability distribution in eq. \eqref{pdR} and its moments in eqs. \eqref{edv} and \eqref{var}, along with the *self-similarity* are the most fundamental properties of a random walk that clear the path for its application in finance. 
+Therefore, the total displacement $R$ from the origin has a normal distribution with mean $\mathbb{E}[R] = 0$ and variance $\mathbb{V}[R] = n$ as expected from a random walk process in $d = 1$ with a unit average step length $b^2 = 1$ as described by eq. \eqref{bsq}. The probability distribution in eq. \eqref{pdR} and its moments in eqs. \eqref{edv} and \eqref{var}, along with the *self-similarity* are the most fundamental properties of a random walk that clear the path for its application in finance. 
 
 ## Random walks for asset pricing 
 -----------
@@ -177,9 +177,9 @@ $$
 \end{equation}
 $$
 
-Eq. \eqref{lpr} finalizes the construction of the stochastic component by interpreting logarithm of the prices changes as random walk with iid random steps and the number of these steps being proportional to the duration of time during which the random walk takes place.
+Eq. \eqref{lpr} finalizes the construction of the stochastic component by interpreting logarithm of the prices changes as random walk with \emph{iid} random steps and the number of these steps being proportional to the duration of time during which the random walk takes place.
 
-In anology with the discussion we presented above, we then expect the total displacement $R = \ln [P(T)/P(t)]$ to be normally distributed with a vanishing expectation value and variance given by 
+In analogy with the discussion we presented above, we then expect the total displacement $R = \ln [P(T)/P(t)]$ to be normally distributed with a vanishing expectation value and variance given by 
 
 $$
 \begin{equation}\label{lprd}
@@ -195,7 +195,7 @@ $$
 \end{equation}
 $$
 
-Eq. \eqref{lprd} expresses one of the fundamental points we advertised at the begining of this post, namely the standard deviation of the logarithm of the price movements (or the square root of its variance) proportional to the square root of time!
+Eq. \eqref{lprd} expresses one of the fundamental points we advertised at the beginning of this post, namely the standard deviation of the logarithm of the price movements (or the square root of its variance) proportional to the square root of time!
 
 Thanks to the self-similarity property of random walks, all infinitesimal changes in the logarithm of the price of an asset, over an infinitesimal time interval $\Delta t \to \mathrm{d} t$ is also normally distributed with a mean zero and variance given by: 
 
@@ -205,7 +205,7 @@ $$
 \end{equation}
 $$
 
-The stochastic differential process described by $\mathrm{d} \ln(P(t))$ is called a Wiener (or Brownian motion) process denoted by $W$. It is a process that changes randomly by a $\mathrm{d}W$ amount over a time interval $\sqrt{\mathrm{d}t}$. By definition, these changes are Gaussian distributed with a mean zero and variance proportional to the time, $\mathrm{d} t$ passed during the change. The shorthand notation for this statment is as follows: 
+The stochastic differential process described by $\mathrm{d} \ln(P(t))$ is called a Wiener (or Brownian motion) process denoted by $W$. It is a process that changes randomly by a $\mathrm{d}W$ amount over a time interval $\sqrt{\mathrm{d}t}$. By definition, these changes are Gaussian distributed with a mean zero and variance proportional to the time, $\mathrm{d} t$ passed during the change. The shorthand notation for this statement is as follows: 
 
 $$
 \begin{equation}\label{W}
