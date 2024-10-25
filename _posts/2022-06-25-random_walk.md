@@ -177,7 +177,7 @@ $$
 \end{equation}
 $$
 
-Eq. \eqref{lpr} finalizes the construction of the stochastic component by interpreting logarithm of the prices changes as random walk with \emph{iid} random steps and the number of these steps being proportional to the duration of time during which the random walk takes place.
+Eq. \eqref{lpr} finalizes the construction of the stochastic component by interpreting logarithm of the prices changes as random walk with iid random steps and the number of these steps being proportional to the duration of time during which the random walk takes place.
 
 In analogy with the discussion we presented above, we then expect the total displacement $R = \ln [P(T)/P(t)]$ to be normally distributed with a vanishing expectation value and variance given by 
 
