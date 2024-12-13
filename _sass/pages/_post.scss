@@ -3,6 +3,11 @@
 @use '../abstracts/mixins' as mx;
 @use '../abstracts/placeholders';
 
+// Force justification for post content
+p {
+  text-align: justify;
+}
+
 %-btn-post-nav {
   width: 50%;
   position: relative;
