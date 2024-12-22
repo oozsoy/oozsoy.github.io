@@ -1,3 +1,7 @@
+---
+layout: compress
+---
+
 {%- comment -%}
   See: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options>
 {%- endcomment -%}
