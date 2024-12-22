@@ -153,8 +153,8 @@ $$
 
 where we defined
 
-$$\label{rnps}
-\begin{equation}
+$$
+\begin{equation}\label{rnps}
 \tilde{p} = 1 - \frac{S_1(H) - (1+r)S_0}{S_1(H) - S_1(T)}, \quad\quad \tilde{q} = \frac{S_1(H) - (1+r)S_0}{S_1(H) - S_1(T)}. 
 \end{equation}
 $$

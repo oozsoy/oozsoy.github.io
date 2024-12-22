@@ -17,9 +17,9 @@ MathJax = {
       ['$$', '$$'],
       ['\\[', '\\]']
     ],
-    processEscapes: true,      // use \$ to produce a literal dollar sign
-    processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
+    processEscapes: true,  
+    processEnvironments: true, 
     processRefs: true, 
-    tags: 'all'
+    tags: 'ams'
   }
 };
