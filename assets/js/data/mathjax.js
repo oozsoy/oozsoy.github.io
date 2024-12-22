@@ -7,6 +7,7 @@ layout: compress
   See: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options>
 {%- endcomment -%}
 
+
 MathJax = {
   tex: {
     {%- comment -%} start/end delimiter pairs for in-line math {%- endcomment -%}
