@@ -29,6 +29,7 @@ V^{(c)}_1 =  \textrm{max}(S_1-K,0)
 $$
 
 Note that in reality, the total profit she can make by exercising the option would be $S_1 - K$ minus the premium over parity. Similarly, the parity value of a put option at the expiry is 
+
 $$
 \begin{equation}\label{Vp}
 V^{(p)}_1 =  \textrm{max}(K - S_1,0)

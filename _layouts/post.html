@@ -13,7 +13,14 @@ script_includes:
 
 {% include toc-status.html %}
 
-<script src="/assets/js/data/mathjax.js"></script>
+<!-- ><script src="/assets/js/data/mathjax.js"></script> -->
+
+<script src="{{ site.baseurl }}/assets/js/data/mathjax.js?v=1.0"></script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"
+  async
+></script>
 
 <article class="px-1" data-toc="{{ enable_toc }}">
   <header>
