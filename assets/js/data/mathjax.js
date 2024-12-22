@@ -3,7 +3,7 @@
 {%- endcomment -%}
 
 
-window.MathJax = {
+MathJax = {
   tex: {
     inlineMath: [
       ['$', '$'],
