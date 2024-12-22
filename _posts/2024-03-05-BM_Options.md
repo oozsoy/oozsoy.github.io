@@ -5,7 +5,6 @@ categories: [Finance]
 tags: [arbitrage, options]     # TAG names should always be lowercase
 description: I discuss a simplified, yet intuitive model of evaluating option contracts that allows us to explore further two key concepts of no-arbitrage principle and risk-neutrality. This is the binomial option pricing model which I intend to explore over a single time step in the future to illustrate the main ideas.  
 math: true
-mermaid: true
 ---
 
 An option is essentially a conditional financial contract that derives its value from an underlying asset. While primitive option-like contracts have been practiced for centuries, the introduction of Black-Scholes model (developed by Fischer Black, Myron Scholes, and later extended by Robert Merton, 1973) revolutionized option pricing by providing a theoretical framework to determine the fair price of European-style options, which led to significant growth (in liquidity) and sophistication in options markets.
@@ -21,21 +20,21 @@ We begin by defining option contracts for which I will always refer to European 
 
 A European option is a financial contract that gives the buyer the right but not the obligation to buy or sell the underling stock/asset at a pre-determined fixed price, called the strike price and on a fixed date, called the exercise date. There are two main types of options exercised in the financial markets: a *call option* gives the buyer the right to buy the underlying asset, while a *put option* gives the buyer the right to sell (short) the underlying asset. Furthermore, we can talk about the intrinsic value (parity value) of an option as the value of the option has if exercised immediately, while the premium over parity is the amount by which the market price of an option (or a convertible security) exceeds its parity value (intrinsic value). This premium accounts for the additional value investors are willing to pay beyond the immediate exercise value, reflecting factors like time value of the option.
 
-To warm things up, now consider an option (call or put) with strike price $K$, on an underlying stock with a current price of $S_0$ and imagine that the exercise date is one discrete-time point into the future, i.e. when the stock is valued at $S_1$. What would be the intrinsic (parity) value of the option at the expiry? Assuming holding a call option, a rational investor will certainly exercise the option, if $S_1 > K$ because in doing so would be advantageous as the investor will have the opportunity to buy low and sell the underlying back in the market pocketing $S_1 - K > 0$. If on the other hand $S_1 < K$, the option expires worthless. Therefore, at the expiry the parity value of a call option is worth precisely
+To warm things up, now consider an option (call or put) with strike price \\(K\\), on an underlying stock with a current price of \\( S_0 \\) and imagine that the exercise date is one discrete-time point into the future, i.e. when the stock is valued at \\(S_1\\). What would be the intrinsic (parity) value of the option at the expiry? Assuming holding a call option, a rational investor will certainly exercise the option, if \\(S_1 > K\\) because in doing so would be advantageous as the investor will have the opportunity to buy low and sell the underlying back in the market pocketing \\(S_1 - K > 0\\). If on the other hand \\(S_1 < K\\), the option expires worthless. Therefore, at the expiry the parity value of a call option is worth precisely
 
-$$
+\\[
 \begin{equation}\label{Vc}
 V^{(c)}_1 =  \textrm{max}(S_1-K,0)
 \end{equation}
-$$
+\\]
 
 Note that in reality, the total profit she can make by exercising the option would be $S_1 - K$ minus the premium over parity. Similarly, the parity value of a put option at the expiry is 
 
-$$
+\\[
 \begin{equation}\label{Vp}
 V^{(p)}_1 =  \textrm{max}(K - S_1,0)
 \end{equation}
-$$ 
+\\]
 
 In this case, if the strike price is greater than the stock, we want to exercise the put option (sell the stock short) for $K$ and then immediately buy it back on the open market for $S_1$, pocketing $K - S_1$ less the premium over parity. If otherwise the stock is worth more than the strike, the put option is worthless. 
 
