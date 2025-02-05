@@ -14,3 +14,9 @@ MathJax = {
     tags: 'ams'
   }
 };
+
+document.addEventListener('turbolinks:load', function () {
+  if (window.MathJax) {
+    MathJax.typesetPromise();
+  }
+});
