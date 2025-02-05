@@ -246,7 +246,7 @@ $$
 \end{equation}
 $$
 
-#### **Convexity and time decay.** 
+#### **Convexity vs time decay.** 
 
 One of the most important characteristic of options as a derivative contract is its asymmetric payoff: while the potential losses are limited, our upside gains are unlimited. Note that this is in contrast with other types of derivatives such as forwards where the pay-off is always linear in the underlying price. In finance, this kind of asymmetric (non-linear) behavior is called “convexity”. This property is already apparent from the pay-off which has a kink at $S_T = K$. 
 
@@ -261,14 +261,14 @@ $$
 which is strictly positive (for both puts and calls) noting $N'(z) = \mathrm{e}^{-z^2/2}/\sqrt{2\pi}$. As a consequence, the Black-Scholes price of an option is a convex function of the stock price. We illustrate the convexity and time decaying behavior of the call option prices in Figure 2., where we plot \eqref{bsf} as a function of the spot price $S$ for a given set of time to maturities $T - t$ (assuming $t = 0$).  
 
 ![CPC](/assets/2024-05-13/Cp_convex.png){: w="800" h="500" }
-_**Figure 1.**  Call option prices at various times before maturity. We assume a call option with strike $K = 100$ on an underling $S$ with 20 percent volatility, $\sigma = 0.2$. Risk-free rate is chosen to be $r = 0.05$._
+_**Figure 2.**  Call option prices at various times before maturity. We assume a call option with strike $K = 100$ on an underling $S$ with 20 percent volatility, $\sigma = 0.2$. Risk-free rate is chosen to be $r = 0.05$._
 
 ### **Shortcomings of the Black-Scholes world**
 -----
 
 The elegance that the Black-Scholes world provides through simplicity is notwithstanding, the simplifying assumptions it makes are quite far from describing the real world behavior in the option markets. What are the shortcomings of the Black-Scholes pricing model? Notice that the model produces option prices for a given set of parameters/variables. These parameters are the strike $K$, time to maturity $T-t$, current stock price, interest rates $r$ and volatility. The latter has a special position because all the other parameters are either specified in the contract (such as $K$, $T$) or observable in the market ($S$ and $r$). From an option dealer's perspective the issue is to estimate the volatility during the life of the option. This is typically done by collecting data on the prices of the traded options in the market, which give rise to the concept of *implied volatility*, e.g. the volatility implied by the price. Empirical data in the option markets show that the implied volatility has a non-trivial dependence on the strike price $K$ even for option's on the same underlying asset. Typically, the graph of implied volatility with respect to $K$ shows a "smile" type shape that reflects the demand-supply dynamics in the market. Furthermore, the smiles are a consistent feature of the markets: although the precise shape of the implied volatility $\sigma(K)$ will be different due to the nature of the underlying, they are never a flat horizontal line as assumed by the Black-Scholes model! This in practice implies that one needs to at least calibrate the Black-Scholes pricing formulas to be able to match the market prices agree with the model.  
 
-Apart from the volatility, the second main assumption that lead us to the pricing formula \eqref{bsf} was the log-normality (or normality) of stock prices (stock returns). In reality, it is known that stock returns exhibit fat tails that are associated with extreme values. This can easily lead to mis-pricing of European options. This fact shows the model dependence of the Black-Scholes world which relies heavily on the Geometric Brownian motion as the stochastic process that describes the dynamics of the underlying. 
+Apart from the volatility, the second main assumption that lead us to the pricing formula \eqref{bsf} was the log-normality (or normality) of stock prices (stock returns). In reality, it is known that stock returns exhibit fat tails that are associated with extreme values. This can easily lead to mispricing of European options. This fact shows the model dependence of the Black-Scholes world which relies heavily on the Geometric Brownian motion as the stochastic process that describes the dynamics of the underlying. 
 
 In another post, I intend to focus on a less model dependent pricing method called the risk-neutral pricing for which we already showed a glimpse in this post. 
 
@@ -331,4 +331,45 @@ plt.title("Black-Scholes Call Option Price vs Volatility")
 plt.xlim(0,0.7)
 plt.legend()
 plt.grid(alpha = 0.9)
+```
+#### Appendix B: Code to reproduce Figure 2 {#appendix-b}
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+import matplotlib.cm as cm
+
+# Black-Scholes formula for European call option
+def black_scholes_call(S, K, T, r, sigma):
+    if T == 0:
+        return max(S - K, 0)  # Payoff at expiry
+    d1 = (np.log(S / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
+    d2 = d1 - sigma * np.sqrt(T)
+    return S * norm.cdf(d1) - K * np.exp(-r * T) * norm.cdf(d2)
+
+# Parameters
+K = 100     # Strike price
+r = 0.05    # Risk-free rate
+sigma = 0.2 # Volatility
+
+S_values = np.linspace(50, 150, 200)  # Stock price range
+T_values = [1, 0.75, 0.5, 0.25, 0.1, 0]
+
+colors = cm.viridis(np.linspace(0, 1, len(T_values)))  # Color map
+
+# 1. Convexity of Call Option Price
+plt.figure(figsize=(10, 5))
+for i, T in enumerate(T_values):
+    call_prices = [black_scholes_call(S, K, T, r, sigma) for S in S_values]
+    label = f"T={T}" if T > 0 else "Payoff (T=0)"
+    color = colors[i] if T > 0 else "black"
+    linestyle = "-" if T > 0 else "--"  # Dashed for final payoff
+    plt.plot(S_values, call_prices, label=label, color=color, linestyle=linestyle)
+
+plt.xlabel(r"$\textrm{Stock Price}\,\, (S)$", fontsize = 13)
+plt.ylabel(r"$\textrm{Price}\,\,(C)$", fontsize = 13)
+plt.title("Convexity and time decay of a Call Option")
+plt.legend()
+plt.grid()
 ```
