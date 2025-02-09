@@ -2,7 +2,7 @@
 title: Risk-neutral valuation
 date: 2024-07-02 15:00:00 -500
 categories: [Finance]
-tags: [risk neutrality, options, ito calculus, binomial trees]     # TAG names should always be lowercase
+tags: [risk neutral pricing, options, martingale, binomial trees]     # TAG names should always be lowercase
 description: I discuss an essential method called risk-neutral pricing method that is commonly utilized to price any European contingent claim, i.e. any contract whose pay-off is determined at the expiry. 
 math: true
 ---
@@ -97,6 +97,7 @@ $$
 $$
 
 In this world with no interest rates, the random processes describing these assets are therefore *martingales* which is a favorite topic of all mathematicians interested in finance. More formally, a (discrete) martingale process $X_i$ satisfies 
+
 $$
 \begin{equation}
 \mathbb{E}[X_r | {F}_k] = X_k 
