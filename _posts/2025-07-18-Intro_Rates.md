@@ -1,5 +1,5 @@
 ---
-title: Intro to Interest Rates
+title: Intro to Rates
 date: 2025-07-17 15:00:00 -500
 categories: [Finance]
 tags: [interest rates]     # TAG names should always be lowercase

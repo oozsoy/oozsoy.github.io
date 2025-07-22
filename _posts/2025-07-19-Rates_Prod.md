@@ -1,5 +1,5 @@
 ---
-title: Dissecting Interest Rate Products - Valuation Concepts and Structures
+title: Simple Rate Products - Valuation Concepts and Structures
 date: 2025-07-19 15:00:00 -500
 categories: [Finance]
 tags: [interest rates, zero rates, bonds, fra]     # TAG names should always be lowercase
