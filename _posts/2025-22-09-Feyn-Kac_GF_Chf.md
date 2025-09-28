@@ -1,6 +1,6 @@
 ---
 title: Feynman-Kac theorem, Green's and Characteristic Functions
-date: 2025-09-18 15:00:00 -500
+date: 2025-09-21 15:00:00 -500
 categories: [Finance]
 tags: [derivative pricing, options]     # TAG names should always be lowercase
 description: I have a closer look at the derivative pricing under the lens of Feynman-Kac theorem to (re)-discover some useful mathematical structures well known for the PDE practitioners and Statisticians  
